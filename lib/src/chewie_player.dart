@@ -5,7 +5,7 @@ import 'package:chewie/src/player_with_controls.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:screen/screen.dart';
+//import 'package:screen/screen.dart';
 import 'package:video_player/video_player.dart';
 
 typedef Widget ChewieRoutePageBuilder(
@@ -134,18 +134,18 @@ class ChewieState extends State<Chewie> {
     ]);
     //}
 
-    if (!widget.controller.allowedScreenSleep) {
-      Screen.keepOn(true);
-    }
+//    if (!widget.controller.allowedScreenSleep) {
+//      Screen.keepOn(true);
+//    }
 
     await Navigator.of(context).push(route);
     _isFullScreen = false;
     widget.controller.exitFullScreen();
 
-    bool isKeptOn = await Screen.isKeptOn;
-    if (isKeptOn) {
-      Screen.keepOn(false);
-    }
+//    bool isKeptOn = await Screen.isKeptOn;
+//    if (isKeptOn) {
+//      Screen.keepOn(false);
+//    }
 
     SystemChrome.setEnabledSystemUIOverlays(
         widget.controller.systemOverlaysAfterFullScreen);
